@@ -1,0 +1,62 @@
+<!-- project.add.component.html -->
+<div class="add-project-container">
+    <h2 style="text-align: center;">Add New Project</h2>
+    <form >
+        <!-- <div class="form-group">
+            <label for="projectId">Project Id</label>
+            <input type="text" id="projectId" name="projectId" [(ngModel)]="projectName">
+        </div> -->
+        <div class="form-group">
+            <label for="projectName">Project Name</label>
+            <input type="text" id="projectName" name="projectName" [(ngModel)]="projectName">
+        </div>
+       
+        <div class="form-group">
+            <label for="startDate">Start Date</label>
+            <input type="date" id="startDate" name="startDate" [(ngModel)]="startDate">
+        </div>
+
+        <div class="form-group">
+            <label for="location">Location</label>
+            <input type="text" id="location" name="location" [(ngModel)]="location">
+        </div>
+
+        <div class="form-group">
+            <label for="projectStatus">Project Status</label>
+            <select id="projectStatus" name="projectStatus" [(ngModel)]="projectStatus">
+                <option value="In Progress">In Progress</option>
+                <option value="Completed">Completed</option>
+                <option value="On Hold">On Hold</option>
+                <!-- Add more options if needed -->
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="projectManager">Project Manager</label>
+            <input type="text" id="projectManager" name="projectManager" [(ngModel)]="projectManager">
+        </div>
+
+        <div class="form-group">
+            <label for="projectStaff">Project Staff</label>
+            <input type="text" id="projectStaff" name="projectStaff" [(ngModel)]="projectStaff">
+        </div>
+
+        <div class="form-group">
+            <label for="contracter">Contracter Name</label>
+            <input type="text" id="contracter" name="contracter" [(ngModel)]="contracter">
+        </div>
+
+        <!-- <button type="submit" (click)="addProjectData()">Submit</button>
+        <button type="button" (click)="cancel()">Cancel</button> -->
+        <button type="submit" *ngIf="projectData.type=='add'" (click)="addProjectData()">Add</button>
+        <button type="submit" *ngIf="projectData.type=='update'" (click)="updateProjectData()">Update</button>
+        <button type="button" (click)="cancel()">Cancel</button>
+    </form>
+</div>
+<!-- "projectName": "Sharma Project",
+"startDate": "2023-02-12",
+"location": "Pune",
+"projectStatus": "completed",
+"projectManager": "Virat Kohli",
+"projectStaff": 120,
+"contracter": null -->

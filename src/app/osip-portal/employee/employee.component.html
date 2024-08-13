@@ -1,0 +1,57 @@
+<div class="header">
+    <div class="left">
+      <!-- <mat-form-field appearance="fill">
+        <mat-label>Search</mat-label>
+        <input matInput placeholder="Search with emp id">
+        <button mat-button matSuffix mat-icon-button aria-label="Clear" *ngIf="true">
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field> -->
+    </div>
+    <div class="right" style="display: flex;">
+      <button mat-raised-button color="primary" (click)="addEmployyee('add','')">Add Employee</button>
+      <button mat-raised-button color="accent" (click)="generatePDF()">Download PDF</button>
+      <button mat-raised-button color="accent" (click)="generateExcel()">Download Excel</button>
+    </div>
+  </div>
+
+<div class="table-responsive" id="employee-table">
+    <table class="table">
+        <thead>
+            <tr>
+                <!-- <th>ID</th> -->
+                <th>Employee Name</th>
+                <th>Email</th>
+                <th>Mobile</th>
+                <th>DOB</th>
+                <th>Aadhar NO</th>
+                <th>Insurance No</th>
+                <th>Department Name</th>
+                <th>Account No</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of empData">
+                <!-- <td>{{ item?.employeeId }}</td> -->
+                <td>{{ item?.employeeName }}</td>
+                <td>{{ item?.email }}</td>
+                <td>{{ item?.phoneNo }}</td>
+                <td>{{ item?.dob }}</td>
+                <td>{{ item?.aadhaarNo }}</td>
+                <td>{{ item?.insuranceNo }}</td>
+                <td>{{ item?.departmentName }}</td>
+                <td>{{ item?.accountNo }}</td>
+                <!-- <td><a href="#" (click)="addEmployyee('update',item)"><mat-icon>edit</mat-icon></a></td> -->
+                <button mat-raised-button color="primary" (click)="addEmployyee('update',item)">
+                  <mat-icon>edit</mat-icon>
+                </button>
+                <button mat-raised-button color="warn" (click)="deleteEmployee(item)">
+                  <mat-icon>delete</mat-icon></button>
+                <button mat-raised-button color="accent" (click)="printEmployee(item)">
+                  <mat-icon>print</mat-icon></button>
+            </tr>
+        </tbody>
+    </table>
+</div>
+

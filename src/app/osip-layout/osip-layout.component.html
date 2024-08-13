@@ -1,0 +1,71 @@
+ <!-- dashboard.component.html -->
+<div class="container">
+    <!-- <header>
+      
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <h3 style="margin: 15px;">{{ pageTitle }}</h3>
+        
+        <button mat-icon-button (click)="logout()">
+            <mat-icon>exit_to_app</mat-icon>
+        </button>
+        
+    </div>
+    </header> -->
+    <header>
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <h3 style="margin: 15px;">{{ pageTitle }}</h3>
+        <div style="display: flex; align-items: center;">
+          <!-- Display the logged-in user's name or username -->
+          <span style="margin-right: 10px;">Welcome, {{ loginData.username }}</span>
+          <button mat-icon-button (click)="logout()">
+            <mat-icon>exit_to_app</mat-icon>
+          </button>
+        </div>
+      </div>
+    </header>
+    <div class="content-container">
+      <aside>
+        <ul class="sidebar">
+            <li class="sidebar-tab" *ngIf="loginData.roles[0]==('ROLE_ADMIN') " (click)="setActiveTab('user')" [ngClass]="{ 'active': activeTab === 'user' }"><a routerLink="/osip-portal/users"><mat-icon>person</mat-icon>Users</a></li>
+            <li class="sidebar-tab" *ngIf="loginData.roles[0]=='ROLE_ADMIN' || loginData.roles.includes('ROLE_STORE_MANAGER')" (click)="setActiveTab('product')" [ngClass]="{ 'active': activeTab === 'product' }"><a routerLink="/osip-portal/product"><mat-icon>shopping_cart</mat-icon>Products</a></li>
+            <li class="sidebar-tab" *ngIf="loginData.roles[0]=='ROLE_ADMIN' || loginData.roles.includes('ROLE_STORE_MANAGER')" (click)="setActiveTab('employee')" [ngClass]="{ 'active': activeTab === 'employee' }"><a routerLink="/osip-portal/employee"><mat-icon>people</mat-icon>Employees</a></li>
+            <li class="sidebar-tab" *ngIf="loginData.roles[0]=='ROLE_ADMIN' " (click)="setActiveTab('account')" [ngClass]="{ 'active': activeTab === 'account' }"><a routerLink="/osip-portal/account"><mat-icon>account_circle</mat-icon>Account</a></li>
+
+            <!-- <li class="sidebar-tab" *ngIf="loginData.roles[0]=='ROLE_ADMIN'" (click)="setActiveTab('supplier')" [ngClass]="{ 'active': activeTab === 'supplier' }"><a routerLink="/osip-portal/supplier"><mat-icon>business</mat-icon> Supplier</a></li> -->
+            <li class="sidebar-tab" *ngIf="loginData.roles[0]=='ROLE_ADMIN'" (click)="setActiveTab('store')" [ngClass]="{ 'active': activeTab === 'store' }"><a routerLink="/osip-portal/store"><mat-icon>store</mat-icon> Store</a></li>
+            <li class="sidebar-tab" *ngIf="loginData.roles[0]=='ROLE_ADMIN'" (click)="setActiveTab('project')" [ngClass]="{ 'active': activeTab === 'project' }"><a routerLink="/osip-portal/project"><mat-icon>folder</mat-icon> Project</a></li>
+        
+         
+            <li class="sidebar-tab" *ngIf="loginData.roles[0] === 'ROLE_ADMIN'" [ngClass]="{ 'active': activeTab === 'report' }">
+              <a (click)="setActiveTab('report')" [matMenuTriggerFor]="reportMenu"><mat-icon>bar_chart</mat-icon> Report</a>
+              <mat-menu #reportMenu="matMenu">
+                <button mat-menu-item routerLink="/osip-portal/product"><span>Product Report</span></button>
+                <button mat-menu-item routerLink="/osip-portal/purchase"><span>Purchase Report</span></button>
+                <button mat-menu-item routerLink="/osip-portal/project"><span>Project Report</span></button>
+                <button mat-menu-item routerLink="/osip-portal/store"><span>Store Report</span></button>
+                <!-- Add more reports as needed -->
+              </mat-menu>
+            </li>
+            
+            <!-- <li class="sidebar-tab" *ngIf="loginData.roles[0]=='ROLE_ADMIN'" (click)="setActiveTab('report')" [ngClass]="{ 'active': activeTab === 'report' }"><a routerLink="/osip-portal/report"><mat-icon>bar_chart</mat-icon> Report</a></li> -->
+            <li class="sidebar-tab" *ngIf="loginData.roles[0]=='ROLE_ADMIN'|| loginData.roles.includes('ROLE_STORE_MANAGER')" (click)="setActiveTab('warehouse')" [ngClass]="{ 'active': activeTab === 'warehouse' }"><a routerLink="/osip-portal/warehouse"><mat-icon>home</mat-icon> Warehouse</a></li>
+            <li class="sidebar-tab" *ngIf="loginData.roles[0]=='ROLE_ADMIN' || loginData.roles.includes('ROLE_STORE_MANAGER')" (click)="setActiveTab('purchase')" [ngClass]="{ 'active': activeTab === 'purchase' }"><a routerLink="/osip-portal/purchase"><mat-icon>shopping_cart</mat-icon> Purchase</a></li>
+            
+            <li class="sidebar-tab" *ngIf="loginData.roles[0]=='ROLE_ADMIN'|| loginData.roles.includes('ROLE_STORE_MANAGER')" (click)="setActiveTab('invoice')" [ngClass]="{ 'active': activeTab === 'invoice' }"><a routerLink="/osip-portal/invoice"><mat-icon>receipt</mat-icon> Invoice</a></li>
+            <li class="sidebar-tab" *ngIf="loginData.roles[0]=='ROLE_ADMIN'|| loginData.roles.includes('ROLE_STORE_MANAGER')" (click)="setActiveTab('application')" [ngClass]="{ 'active': activeTab === 'application' }"><a routerLink="/osip-portal/application"><mat-icon>apps</mat-icon> Application</a></li>
+            <li class="sidebar-tab" *ngIf="loginData.roles[0]=='ROLE_ADMIN'|| loginData.roles.includes('ROLE_STORE_MANAGER')"(click)="setActiveTab('settings')" [ngClass]="{ 'active': activeTab === 'settings' }"><a routerLink="/osip-portal/settings"><mat-icon>settings</mat-icon> Settings</a></li>
+        </ul>
+      </aside>
+      <main>
+        <!-- Main content goes here -->
+        <div class="content">
+         <router-outlet></router-outlet>
+        </div>
+      </main>
+    </div>
+    <footer>
+      <!-- Footer content goes here -->
+    </footer>
+  </div>
+  
+  

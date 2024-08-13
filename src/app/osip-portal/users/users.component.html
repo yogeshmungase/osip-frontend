@@ -1,0 +1,68 @@
+<div class="header">
+    <div class="left">
+        <!-- <input type="text" placeholder="Search by Username" [(ngModel)]="searchUsername">
+        <input type="text" placeholder="Search by Name" [(ngModel)]="searchName">
+        <input type="text" placeholder="Search by Store ID" [(ngModel)]="searchStoreId"> -->
+        
+    </div>
+    <div class="right">
+      <button mat-raised-button color="primary" (click)="addOrUpdateUser('add','')">Add User</button>
+      <button mat-raised-button color="accent" (click)="generatePDF()">Download PDF</button>
+      <button mat-raised-button color="accent" (click)="generateExcel()">Download Excel</button>
+    </div>
+  </div>
+
+<div class="table-responsive" id="user-table">
+    <table class="table">
+        <thead>
+            <tr>
+                <!-- <th>Id</th> -->
+                <th>UserName</th>
+                <th>FirstName</th>
+                <th>LastName</th>
+                <th>DOB</th>
+                <th>PhoneNo</th>
+                <th>Address</th>
+                <th>Gender</th>
+                <th>Email</th>
+                <th>Store Id</th>
+                <th>Store Name</th>
+                <th>Project Name</th>
+                <th>Role</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of empData">
+                <!-- <td>{{ item?.id }}</td> -->
+                <td>{{ item?.username }}</td>
+                <td>{{ item?.firstName }}</td>
+                <td>{{ item?.lastName }}</td>
+                <td>{{ item?.dob }}</td>
+                <td>{{ item?.phoneNo }}</td>
+                <td>{{ item?.address }}</td>
+                <td>{{ item?.gender }}</td>
+                <td>{{ item?.email }}</td>
+                <td>{{ item?.storeId }}</td>
+                <td>{{ item?.storeName }}</td>
+                <td>{{ item?.projectName }}</td>
+                <td>{{ item?.roles[0].name }}</td>
+                <!-- <td><a href="#" (click)="addOrUpdateUser('update',item)"><mat-icon>edit</mat-icon></a></td> -->
+                <td style="display: flex;" text-algin ="center">
+                <button mat-raised-button color="primary" (click)="addOrUpdateUser('update',item)">
+                    <mat-icon>edit</mat-icon>
+                </button>
+                <button mat-raised-button color="warn" (click)="deleteUser(item)">
+                    <mat-icon>delete</mat-icon>    
+                </button>
+                <button mat-icon-button color="accent" (click)="printUser(item)">
+                    <mat-icon>print</mat-icon>
+                </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+      
+            

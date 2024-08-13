@@ -1,0 +1,86 @@
+/* dashboard.component.css */
+.container {
+  max-width: 1600px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  header {
+    background-color: #9a9023;
+    color: white;
+  }
+  
+  .content-container {
+    display: flex; /* Use flexbox to align sidebar and content */
+    flex: 1; /* Take up remaining space */
+  }
+  
+  aside {
+    background-color: #f0f0f0;
+    width: 200px;
+    height: calc(100vh - 60px); /* Subtract header and footer height */
+    overflow-y: auto; /* Enable vertical scrolling */
+  }
+  .sidebar{
+    background-color: cyan;
+  }
+  
+  main {
+    flex-grow: 1;
+    padding: 10px;
+    overflow: hidden; /* Hide main content overflow */
+  }
+  
+  footer {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  li {
+    padding: 10px;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #333;
+  }
+  aside:active {
+    background-color: #ccc; /* Change to desired color */
+  }
+  .sidebar-tab {
+    padding: 10px;
+    cursor: pointer; /* Change cursor to pointer to indicate clickable */
+  }
+  
+  .sidebar-tab.active {
+    background-color: yellow; /* Change to desired color */
+  }
+  /* .sidebar-tab .mat-menu-item {
+    padding: 10px 16px;
+  }
+  
+  .sidebar-tab .mat-menu-item span {
+    margin-left: 10px;
+  }
+  
+  .sidebar-tab .mat-icon {
+    vertical-align: middle;
+  } */
+  
+  
+  @media screen and (max-width: 768px) {
+    .container {
+      flex-direction: column;
+    }
+    aside {
+      width: 100%;
+    }
+  }
+      

@@ -1,0 +1,58 @@
+
+<div class="header">
+    <div class="left">
+      <!-- <mat-form-field appearance="fill">
+        <mat-label>Search</mat-label>
+        <input matInput placeholder="Search with emp id">
+        <button mat-button matSuffix mat-icon-button aria-label="Clear" *ngIf="true">
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field> -->
+    </div>
+    <div class="right">
+      <button mat-raised-button color="primary" (click)="addorUpdateWarehouse('add','')">Add New Warehouse</button>
+      <button mat-raised-button color="accent" (click)="generatePDF()">Download PDF</button>
+      <button mat-raised-button color="accent" (click)="generateExcel()">Download Excel</button>
+    </div>
+  </div>
+
+<div class="table-responsive" id="warehouse-table">
+    <table class="table">
+        <thead>
+            <tr>
+                <!-- <th>ID</th> -->
+                <th>location </th>
+                <th>managerId</th>
+                <th>warehouseManagerName</th>
+                <th>warehouseManagerPhone</th>
+                <th>email </th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of empData">
+                <!-- <td>{{ item?.warehouseId }}</td> -->
+                <td>{{ item?.location }}</td>
+                <td>{{ item?.managerId }}</td>
+                <td>{{ item?.warehouseManagerName }}</td>
+                <td>{{ item?.warehouseManagerPhone }}</td>
+                <td>{{ item?.email }}</td>
+                <td>
+                  <!-- <a href="" (click)="addorUpdateWarehouse('update',item)"><mat-icon>edit</mat-icon></a> -->
+                  <button mat-raised-button color="primary" (click)="addorUpdateWarehouse('update',item)">
+                    <mat-icon>edit</mat-icon>
+                  </button>
+                  <button mat-raised-button color="warn" (click)="deleteWarehouse(item)">
+                    <mat-icon>delete</mat-icon>    
+                </button>
+                <button mat-icon-button color="accent" (click)="printWarehouse(item)">
+                    <mat-icon>print</mat-icon>
+                </button></td>
+                
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+

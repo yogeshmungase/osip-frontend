@@ -1,0 +1,48 @@
+<div class="add-update-employee-container">
+    <h2>Add New Account</h2>
+    <form>
+        <div class="form-group">
+            <label for="accountHolderName">Account Holder Name </label>
+            <input type="text" id="accountHolderName" name="accountHolderName"[(ngModel)]="accountHolderName" >
+        </div>
+        
+        <div class="form-group">
+            <label for="supplierName">SupplierName</label>
+            <input type="text" id="supplierName" name="supplierName" [(ngModel)]="supplierName">
+        </div>
+        <div class="form-group">
+            <label for="accountNo">Account No</label>
+            <input type="text" id="accountNo" name="accountNo" [(ngModel)]="accountNo">
+        </div>
+       
+
+        <div class="form-group">
+            <label for="phoneNo">PhoneNo</label>
+            <input type="number" id="phoneNo" name="phoneNo" [(ngModel)]="phoneNo">
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="text" id="email" name="email" [(ngModel)]="email">
+        </div>
+         
+        <div class="form-group">
+            <label for="payment">Total Payment </label>
+            <input type="text" id="payment" name="payment" [(ngModel)]="payment">
+        </div> 
+        <div class="form-group">
+            <label for="paymentDue">Payment Due </label>
+            <input type="text" id="paymentDue" name="paymentDue" [(ngModel)]="paymentDue" >
+        </div> 
+        <div class="form-group">
+            <label for="paymentPaid">Payment Paid </label>
+            <input type="text" id="paymentPaid" name="paymentPaid"[(ngModel)]="paymentPaid" >
+        </div> 
+        
+        <!-- <button type="submit" (click)="register()">Register</button> -->
+        <button type="submit" *ngIf="accountData.type=='add'" (click)="addAccountData()">Add</button>
+        <button type="submit" *ngIf="accountData.type=='update'" (click)="updateAccountsData()">Update</button>
+        <button type="button" (click)="cancel()">Cancel</button>
+        
+    </form>
+</div>
+

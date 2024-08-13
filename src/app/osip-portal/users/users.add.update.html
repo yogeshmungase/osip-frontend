@@ -1,0 +1,82 @@
+<div class="add-update-employee-container">
+    <h2 style="text-align: center;">Registration</h2>
+    <form>
+        <div class="form-group">
+            <label for="firstname">FirstName</label>
+            <input type="text" id="firstname" name="firstname" [(ngModel)]="firstname" required>
+        </div>
+        <div class="form-group">
+            <label for="last">LastName</label>
+            <input type="text" id="lastname" name="lastname" [(ngModel)]="lastname" required>
+        </div>
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" [(ngModel)]="username" required>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" [(ngModel)]="password" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="text" id="email" name="email" [(ngModel)]="email" required>
+        </div>
+        <div class="form-group">
+            <label for="phoneno">PhoneNo</label>
+            <input type="text" id="phoneno" name="phoneno" [(ngModel)]="phoneno" required>
+        </div>
+        <div class="form-group">
+            <label for="address">Address</label>
+            <input type="text" id="address" name="address" [(ngModel)]="address" required>
+        </div>
+
+
+        <div class="form-group">
+            <label for="storeId">Store Id</label>
+
+            <select [(ngModel)]="storeId" (change)="setStoreAndProjectDetails($event)">
+                <option *ngFor="let record of storeData" [ngValue]="record.storeId">
+                    {{ record.storeId }}
+                </option>
+            </select>
+
+        </div>
+        <div class="form-group">
+            <label for="storeName">Store Name</label>
+            <input type="text" id="storeName" name="storeName" [(ngModel)]="storeName" required>
+        </div>
+        <div class="form-group">
+            <label for="projectName">Project Name</label>
+            <input type="text" id="projectName" name="projectName" [(ngModel)]="projectName" required>
+        </div>
+
+
+        <div class="form-group">
+            <label for="dob">Date Of Birth</label>
+            <input type="date" id="dob" name="dob" [(ngModel)]="dob" required>
+        </div>
+
+        <div class="form-group">
+            <label for="gender">Gender</label>
+            <!-- <input type="text" id="gender" name="gender" [(ngModel)]="gender" required> -->
+            <select name="gender" id="gender" [(ngModel)]="gender" required>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+        </div>
+        <div class="form-group">
+                <label for="roles">Roles</label>
+                <select name="roles" id="roles" [(ngModel)]="roles" required>
+                    <option value="admin">ROLE_ADMIN</option>
+                    <!-- <option value="mod">mod</option> -->
+                    <option value="storemanager">ROLE_STORE_MANAGER</option>
+                    <option value="warehousemanager">ROLE_WAREHOUSE_MANAGER</option>
+                </select>
+            </div> 
+
+
+        <button type="submit" *ngIf="userData.type=='add'" (click)="addUserData()">Add</button>
+        <button type="submit" *ngIf="userData.type=='update'" (click)="updateUserData()">Update</button>
+        <button type="button" (click)="cancel()">Cancel</button>
+    </form>
+</div>

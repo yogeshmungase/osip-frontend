@@ -1,0 +1,67 @@
+
+<div class="header">
+    <div class="left">
+      <!-- <mat-form-field appearance="fill">
+        <mat-label>Search</mat-label>
+        <input matInput placeholder="Search with emp id">
+        <button mat-button matSuffix mat-icon-button aria-label="Clear" *ngIf="true">
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field> -->
+    </div>
+    <div class="right">
+      <button mat-raised-button color="primary" (click)="addOrUpdateProject('add','')">Add New Project</button>
+      <button mat-raised-button color="accent" (click)="generatePDF()">Download PDF</button>
+      <button mat-raised-button color="accent" (click)="generateExcel()">Download Excel</button>
+    </div>
+  </div>
+
+<div class="table-responsive" id="project-table">
+    <table class="table">
+        <thead>
+            <tr>
+                <!-- <th>ID</th> -->
+                <th>Project Name</th>
+                <th>Start Date</th>
+                <th>Location</th>
+                <th>Project Status</th>
+                <th>Project Manager</th>
+                <th>Project Staff</th>
+                <th>Contracter Name</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of empData">
+                <!-- <td>{{ item?.projectId }}</td> -->
+                <td>{{ item?.projectName }}</td>
+                <td>{{ item?.startDate }}</td>
+                <td>{{ item?.location }}</td>
+                <td>{{ item?.projectStatus }}</td>
+                <td>{{ item?.projectManager }}</td>
+                <td>{{ item?.projectStaff }}</td>
+                <td>{{ item?.contracter }}</td>
+                <!-- <td><a href="#" (click)="addOrUpdateProject('update',item)"><mat-icon>edit</mat-icon></a></td> -->
+                <button mat-raised-button color="primary" (click)="addOrUpdateProject('update',item)">
+                  <mat-icon>edit</mat-icon>
+                </button>
+                <button mat-raised-button color="warn" (click)="deleteProject(item)">
+                  <mat-icon>delete</mat-icon>    
+              </button>
+              <button mat-icon-button color="accent" (click)="printProject(item)">
+                  <mat-icon>print</mat-icon>
+              </button>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<!-- "projectId": 1345,
+"projectName": "Mahi Project",
+"startDate": "2023-02-12",
+"location": "Nagar",
+"projectStatus": "Started",
+"projectManager": "Ruturaj ",
+"projectStaff": 150,
+"contracter": null -->

@@ -1,0 +1,64 @@
+
+<div class="header">
+    <div class="left">
+      <!-- <mat-form-field appearance="fill">
+        <mat-label>Search</mat-label>
+        <input matInput placeholder="Search with emp id">
+        <button mat-button matSuffix mat-icon-button aria-label="Clear" *ngIf="true">
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field> -->
+    </div>
+    <div class="right" style="display: flex;">
+      <button mat-raised-button color="primary" (click)="addPurchase('add','')">Add Purchase</button>
+      <button mat-raised-button color="accent" (click)="generatePDF()">Download PDF</button>
+      <button mat-raised-button color="accent" (click)="generateExcel()">Download Excel</button>
+    </div>
+  </div>
+
+<div class="table-responsive" id="purchase-table">
+    <table class="table">
+        <thead>
+            <tr>
+                <!-- <th>Purchase Id</th> -->
+                <th>Supplier Name</th>
+                <th>Store Name</th>
+                <th>Purchase OrderId</th>
+                <th>Purchase Date</th>
+                <th>Product Name</th>
+                <th>Product Id</th>
+                <th>Unit Price</th>
+                <th>Total Cost</th>
+                <th>Status</th>
+                <th>Payment Status</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        
+       
+        <tbody>
+            <tr *ngFor="let item of empData">
+                <!-- <td>{{ item?.v }}</td> -->
+                <td>{{ item?.supplierName }}</td>
+                <td>{{ item?.storeName }}</td>
+                <td>{{ item?.purchaseOrderId }}</td>
+                <td>{{ item?.purchaseDate }}</td>
+                <td>{{ item?.productName }}</td>
+                <td>{{ item?.productId }}</td>
+                <td>{{ item?.unitPrice }}</td>
+                <td>{{ item?.totalCost }}</td>
+                <td>{{ item?.status }}</td>
+                <td>{{ item?.paymentStatus }}</td>
+                
+                <button mat-raised-button color="primary" (click)="addPurchase('update',item)">
+                  <mat-icon>edit</mat-icon>
+                </button>
+                <button mat-raised-button color="warn" (click)="deletePurchase(item)">
+                  <mat-icon>delete</mat-icon></button>
+                <button mat-raised-button color="accent" (click)="printPurchase(item)">
+                  <mat-icon>print</mat-icon></button>
+            </tr>
+        </tbody>
+    </table>
+</div>
+

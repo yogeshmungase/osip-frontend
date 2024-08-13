@@ -1,0 +1,97 @@
+<!-- <div class="header">
+    <div class="left">
+     
+    </div>
+    <div class="right">
+      <button mat-raised-button color="primary" (click)="addOrUpdateAccount('add','')">Add New Account</button>
+      <button mat-raised-button color="accent" (click)="generatePDF()">Download PDF</button>
+    </div>
+  </div>
+
+<div id="user-table" class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Account Holder Name</th>
+                <th>Supplier Name</th>
+                <th>Account No</th>
+                <th>Mobile No</th>
+                <th>Email</th>
+                <th>Total Payment</th>
+                <th>Payment Due</th>
+                <th>Payment Paid </th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of empData">
+                <td>{{ item?.accountHolderName }}</td>
+                <td>{{ item?.supplierName }}</td>
+                <td>{{ item?.accountNo }}</td>
+                <td>{{ item?.phoneNo }}</td>
+                <td>{{ item?.email }}</td>
+                <td>{{ item?.payment }}</td>
+                <td>{{ item?.paymentDue }}</td>
+                <td>{{ item?.paymentPaid }}</td>
+                
+                <button mat-raised-button color="primary" (click)="addOrUpdateAccount('update',item)">
+                  <mat-icon>edit</mat-icon>
+                </button>
+                <button mat-raised-button color="warn" (click)="deleteAccount(item)">
+                  <mat-icon>delete</mat-icon></button>
+                <button mat-raised-button color="accent" (click)="printAccount(item)">
+                  <mat-icon>print</mat-icon></button>
+            </tr>
+        </tbody>
+    </table>
+</div> -->
+
+<div class="header">
+  <div class="left"></div>
+  <div class="right">
+    <button mat-raised-button color="primary" (click)="addOrUpdateAccount('add','')">Add New Account</button>
+    <button mat-raised-button color="primary" (click)="generatePDF()">Download PDF</button>
+    <button mat-raised-button color="accent" (click)="generateExcel()">Download Excel</button>
+    <!-- <button mat-raised-button color="accent" (click)="generatePDF()">Download PDF</button> -->
+  </div>
+</div>
+
+<div  class="table-responsive" id="account-table">
+  <table class="table">
+      <thead>
+          <tr>
+              <th>Account Holder Name</th>
+              <th>Supplier Name</th>
+              <th>Account No</th>
+              <th>Mobile No</th>
+              <th>Email</th>
+              <th>Total Payment</th>
+              <th>Payment Due</th>
+              <th>Payment Paid </th>
+              <th>Action</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let item of empData">
+              <td>{{ item?.accountHolderName }}</td>
+              <td>{{ item?.supplierName }}</td>
+              <td>{{ item?.accountNo }}</td>
+              <td>{{ item?.phoneNo }}</td>
+              <td>{{ item?.email }}</td>
+              <td>{{ item?.payment }}</td>
+              <td>{{ item?.paymentDue }}</td>
+              <td>{{ item?.paymentPaid }}</td>
+              <td>
+                <button mat-raised-button color="primary" (click)="addOrUpdateAccount('update',item)">
+                  <mat-icon>edit</mat-icon>
+                </button>
+                <button mat-raised-button color="warn" (click)="deleteAccount(item)">
+                  <mat-icon>delete</mat-icon></button>
+                <button mat-raised-button color="accent" (click)="printAccount(item)">
+                  <mat-icon>print</mat-icon></button>
+              </td>
+          </tr>
+      </tbody>
+  </table>
+</div>
+

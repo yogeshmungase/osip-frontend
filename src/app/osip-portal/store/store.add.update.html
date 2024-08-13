@@ -1,0 +1,46 @@
+<div class="add-update-employee-container">
+    <h2>Add New Store</h2>
+    <form>
+        <div class="form-group">
+            <label for="storeId">Store Id</label>
+            <input type="text" id="storeId" name="storeId" [(ngModel)]="storeId">
+        </div>
+
+        <div class="form-group">
+            <label for="storeName">Store Name</label>
+            <input type="text" id="storeName" name="storeName" [(ngModel)]="storeName">
+        </div>
+
+        <div class="form-group">
+            <label for="projectName">Project Name</label>
+            <input type="text" id="projectName" name="projectName" [(ngModel)]="projectName">
+        </div>
+
+        <div class="form-group">
+            <label for="storeLocation">Store Location</label>
+            <input type="text" id="storeLocation" name="storeLocation" [(ngModel)]="storeLocation">
+        </div>
+        <div class="form-group">
+            <label for="storeManagerName">Store Manager Name</label>
+            <input type="text" id="storeManagerName" name="storeManagerName" [(ngModel)]="storeManagerName">
+        </div>
+        <div class="form-group">
+            <label for="managerPhoneNo">Manager Phone No</label>
+            <input type="number" id="managerPhoneNo" name="managerPhoneNo" [(ngModel)]="managerPhoneNo">
+        </div>
+        <div class="form-group">
+            <label for="projectStatus">Project Status</label>
+            <select name="projectStatus" id="projectStatus">
+                <option value="On Going">On Going</option>
+                <option value="Completed">Completed</option>
+            </select>
+        </div>
+        <button type="submit" *ngIf="storeData.type=='add'" (click)="addStoreData()">Add</button>
+        <button type="submit" *ngIf="storeData.type=='update'" (click)="updateStoreData()">Update</button>
+        <button type="button" (click)="cancel()">Cancel</button>
+        
+        <!-- <button type="submit" *ngIf="storeData.type=='add'" (click)="addStoreData()">Add</button>
+        <button type="submit" *ngIf="storeData.type=='update'" (click)="updateStoreData()">Update</button>
+        <button type="button" (click)="cancel()">Cancel</button> -->
+    </form>
+</div>

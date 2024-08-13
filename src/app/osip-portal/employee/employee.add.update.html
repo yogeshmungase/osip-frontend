@@ -1,0 +1,52 @@
+<div class="add-update-employee-container">
+    <h2>Add New Employee</h2>
+    <form>
+        <!-- <div class="form-group">
+            <label for="employee">Employee Id</label>
+            <input type="text" id="employee" name="employee" >
+        </div> -->
+        
+        <div class="form-group">
+            <label for="employeeName">Employee name</label>
+            <input type="text" id="employeeName" name="employeeName" [(ngModel)]="employeeName">
+
+        </div>
+        
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="text" id="email" name="email" [(ngModel)]="email">
+        </div>
+       
+        <div class="form-group">
+            <label for="phoneNo">PhoneNo</label>
+            <input type="text" id="phoneNo" name="phoneNo" [(ngModel)]="phoneNo">
+        </div>
+        <div class="form-group">
+            <label for="dob">Date Of Birth</label>
+            <input type="date" id="dob" name="dob" [(ngModel)]="dob">
+        </div> 
+        <div class="form-group">
+            <label for="aadhaarNo">Aadhar No</label>
+            <input type="number" id="aadhaarNo" name="aadhaarNo" [(ngModel)]="aadhaarNo">
+        </div> 
+        <div class="form-group">
+            <label for="insuranceNo">Insurance No</label>
+            <input type="text" id="insuranceNo" name="insuranceNo" [(ngModel)]="insuranceNo">
+        </div> 
+        <div class="form-group">
+            <label for="departmentName">Department Name</label>
+            <input type="text" id="departmentName" name="departmentName" [(ngModel)]="departmentName">
+        </div> 
+        <div class="form-group">
+            <label for="accountNo">Account No </label>
+            <input type="text" id="accountNo" name="accountNo" [(ngModel)]="accountNo">
+        </div> 
+        
+        
+        <button type="submit" *ngIf="employeeData.type=='add'" (click)="addEmployeeData()">Add</button>
+        <button type="submit" *ngIf="employeeData.type=='update'" (click)="updateEmployeeData()">Update</button>
+        <button type="button" (click)="cancel()">Cancel</button>
+        
+    </form>
+</div>
+

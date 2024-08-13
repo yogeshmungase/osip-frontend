@@ -1,0 +1,48 @@
+/* Add this CSS to make the table responsive */
+.table-responsive {
+    overflow-x: auto;
+    overflow-y: scroll;
+  }
+  
+  /* Optional: Add styling to your table */
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .table th,
+  .table td {
+    border: 1px solid #dddddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .table th {
+    background-color: #f2f2f2;
+  }
+
+  /* table.component.css */
+/* table.component.css */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .left {
+    display: flex;
+    align-items: center;
+  }
+  
+  .left mat-form-field {
+    margin-right: 10px;
+  }
+  
+  /* Optional: Adjust the button style as needed */
+  button {
+    margin-right: 2px;
+    background-color: blue;
+    border-radius: 10%;
+  }
+  

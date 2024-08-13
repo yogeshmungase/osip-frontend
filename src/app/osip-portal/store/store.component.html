@@ -1,0 +1,54 @@
+<div class="header">
+    <div class="left">
+      <!-- <mat-form-field appearance="fill">
+        <mat-label>Search</mat-label>
+        <input matInput placeholder="Search with emp id">
+        <button mat-button matSuffix mat-icon-button aria-label="Clear" *ngIf="true">
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field> -->
+    </div>
+    <div class="right">
+      <button mat-raised-button color="primary" (click)="addOrUpdateStore('add','')">Add Store</button>
+      <button mat-raised-button color="accent" (click)="generatePDF()">Download PDF</button>
+      <button mat-raised-button color="accent" (click)="generateExcel()">Download Excel</button>
+    </div>
+  </div>
+
+<div class="table-responsive" id="store-table">
+    <table class="table">
+        <thead>
+            <tr>
+                <!-- <th>Store ID</th> -->
+                <th>Store Name</th>
+                <th>Project Name</th>
+                <th>Store Location</th>
+                <th>Manager Name</th>
+                <th>Manager Phone No</th>
+                <th>Project Status</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of empData">
+                <!-- <td>{{ item?.storeId }}</td> -->
+                <td>{{ item?.storeName }}</td>
+                <td>{{ item?.projectName }}</td>
+                <td>{{ item?.storeLocation }}</td>
+                <td>{{ item?.storeManagerName }}</td>
+                <td>{{ item?.managerPhoneNo }}</td>
+                <td>{{ item?.projectStatus }}</td>
+                <button mat-raised-button color="primary" (click)="addOrUpdateStore('update',item)">
+                  <mat-icon>edit</mat-icon>
+                </button>
+                <button mat-raised-button color="warn" (click)="deleteStore(item)">
+                  <mat-icon>delete</mat-icon></button>
+                <button mat-raised-button color="accent" (click)="printStore(item)">
+                  <mat-icon>print</mat-icon></button>
+                
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+

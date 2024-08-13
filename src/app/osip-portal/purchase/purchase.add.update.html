@@ -1,0 +1,72 @@
+<div class="add-update-employee-container">
+    <h2>Add New Employee</h2>
+    <form>
+        <!-- <div class="form-group">
+            <label for="employee">Purchase Id</label>
+            <input type="text" id="employee" name="employee" >
+        </div> -->
+        
+        <div class="form-group">
+            <label for="supplierName">Supplier Name</label>
+            <input type="text" id="supplierName" name="supplierName" [(ngModel)]="supplierName">
+
+        </div>
+        
+        <div class="form-group">
+            <label for="storeName">Store Name</label>
+            <input type="text" id="storeName" name="storeName" [(ngModel)]="storeName">
+        </div>
+       
+        <div class="form-group">
+            <label for="purchaseOrderId">Purchase OrderId</label>
+            <input type="text" id="purchaseOrderId" name="purchaseOrderId" [(ngModel)]="purchaseOrderId">
+        </div>
+        <div class="form-group">
+            <label for="purchaseDate">Purchase Date</label>
+            <input type="date" id="purchaseDate" name="purchaseDate" [(ngModel)]="purchaseDate">
+        </div> 
+        
+        <div class="form-group">
+            <label for="productName">Product Name</label>
+            <input type="text" id="productName" name="productName" [(ngModel)]="productName">
+        </div> 
+        <div class="form-group">
+            <label for="productId">Product Id</label>
+            <input type="text" id="productId" name="productId" [(ngModel)]="productId">
+        </div> 
+        <div class="form-group">
+            <label for="unitPrice">Unit Price</label>
+            <input type="text" id="unitPrice" name="unitPrice" [(ngModel)]="unitPrice">
+        </div> 
+        <div class="form-group">
+            <label for="totalCost">Total Cost </label>
+            <input type="text" id="totalCost" name="totalCost" [(ngModel)]="totalCost">
+        </div> 
+        <div class="form-group">
+            <label for="status">Status</label>
+            <select id="status" name="status" [(ngModel)]="status">
+                <option value="received">Received</option>
+                <option value="pending">Pending</option>
+                <option value="shipped">Shipped</option>
+                <option value="delivered">Delivered</option>
+            </select>
+        </div> 
+        
+        <div class="form-group">
+            <label for="paymentStatus">Payment Status</label>
+            <select id="paymentStatus" name="paymentStatus" [(ngModel)]="paymentStatus">
+                <option value="paid">Paid</option>
+                <option value="unpaid">Unpaid</option>
+                <option value="pending">Pending</option>
+                <option value="refunded">Refunded</option>
+            </select>
+        </div> 
+        
+        
+        <button type="submit" *ngIf="purchaseData.type=='add'" (click)="addPurchaseData()">Add</button>
+        <button type="submit" *ngIf="purchaseData.type=='update'" (click)="updatePurchaseData()">Update</button>
+        <button type="button" (click)="cancel()">Cancel</button>
+        
+    </form>
+</div>
+
